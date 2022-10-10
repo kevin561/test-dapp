@@ -1154,51 +1154,35 @@ const initialize = async () => {
     const chainId = parseInt(chainIdDiv.innerHTML, 16) || networkId;
     const msgParams = {
       domain: {
+        name: 'Meke Protocol',
         chainId: chainId.toString(),
-        name: 'Ether Mail',
-        verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
-        version: '1',
+        version: '1.0',
       },
       message: {
-        contents: 'Hello, Bob!',
-        from: {
-          name: 'Cow',
-          wallets: [
-            '0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826',
-            '0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF',
-          ],
+        Order: {
+          trader: '0xA87479898682AeEe5cd2c195652609dff2B6fB3E',
+          broker: '0xA87479898682AeEe5cd2c195652609dff2B6fB3E',
+          perpetual: '0xA87479898682AeEe5cd2c195652609dff2B6fB3E',
+          amount: 254162241111,
+          price: 15422,
+          data: 45484,
         },
-        to: [
-          {
-            name: 'Bob',
-            wallets: [
-              '0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB',
-              '0xB0BdaBea57B0BDABeA57b0bdABEA57b0BDabEa57',
-              '0xB0B0b0b0b0b0B000000000000000000000000000',
-            ],
-          },
-        ],
       },
-      primaryType: 'Mail',
+      primaryType: 'Order',
       types: {
         EIP712Domain: [
           { name: 'name', type: 'string' },
-          { name: 'version', type: 'string' },
           { name: 'chainId', type: 'uint256' },
-          { name: 'verifyingContract', type: 'address' },
+          { name: 'version', type: 'string' },
         ],
-        Group: [
-          { name: 'name', type: 'string' },
-          { name: 'members', type: 'Person[]' },
-        ],
-        Mail: [
-          { name: 'from', type: 'Person' },
-          { name: 'to', type: 'Person[]' },
-          { name: 'contents', type: 'string' },
-        ],
-        Person: [
-          { name: 'name', type: 'string' },
-          { name: 'wallets', type: 'address[]' },
+        Order: [{ name: 'Order', type: 'OrderType' }],
+        OrderType: [
+          { name: 'trader', type: 'address' },
+          { name: 'broker', type: 'address' },
+          { name: 'perpetual', type: 'address' },
+          { name: 'amount', type: 'uint256' },
+          { name: 'price', type: 'uint256' },
+          { name: 'data', type: 'bytes32' },
         ],
       },
     };
@@ -1224,51 +1208,35 @@ const initialize = async () => {
     const chainId = parseInt(chainIdDiv.innerHTML, 16) || networkId;
     const msgParams = {
       domain: {
-        chainId,
-        name: 'Ether Mail',
-        verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
-        version: '1',
+        name: 'Meke Protocol',
+        chainId: chainId.toString(),
+        version: '1.0',
       },
       message: {
-        contents: 'Hello, Bob!',
-        from: {
-          name: 'Cow',
-          wallets: [
-            '0xCD2a3d9F938E13CD947Ec05AbC7FE734Df8DD826',
-            '0xDeaDbeefdEAdbeefdEadbEEFdeadbeEFdEaDbeeF',
-          ],
+        Order: {
+          trader: '0xA87479898682AeEe5cd2c195652609dff2B6fB3E',
+          broker: '0xA87479898682AeEe5cd2c195652609dff2B6fB3E',
+          perpetual: '0xA87479898682AeEe5cd2c195652609dff2B6fB3E',
+          amount: 254162241111,
+          price: 15422,
+          data: 45484,
         },
-        to: [
-          {
-            name: 'Bob',
-            wallets: [
-              '0xbBbBBBBbbBBBbbbBbbBbbbbBBbBbbbbBbBbbBBbB',
-              '0xB0BdaBea57B0BDABeA57b0bdABEA57b0BDabEa57',
-              '0xB0B0b0b0b0b0B000000000000000000000000000',
-            ],
-          },
-        ],
       },
-      primaryType: 'Mail',
+      primaryType: 'Order',
       types: {
         EIP712Domain: [
           { name: 'name', type: 'string' },
-          { name: 'version', type: 'string' },
           { name: 'chainId', type: 'uint256' },
-          { name: 'verifyingContract', type: 'address' },
+          { name: 'version', type: 'string' },
         ],
-        Group: [
-          { name: 'name', type: 'string' },
-          { name: 'members', type: 'Person[]' },
-        ],
-        Mail: [
-          { name: 'from', type: 'Person' },
-          { name: 'to', type: 'Person[]' },
-          { name: 'contents', type: 'string' },
-        ],
-        Person: [
-          { name: 'name', type: 'string' },
-          { name: 'wallets', type: 'address[]' },
+        Order: [{ name: 'Order', type: 'OrderType' }],
+        OrderType: [
+          { name: 'trader', type: 'address' },
+          { name: 'broker', type: 'address' },
+          { name: 'perpetual', type: 'address' },
+          { name: 'amount', type: 'uint256' },
+          { name: 'price', type: 'uint256' },
+          { name: 'data', type: 'bytes32' },
         ],
       },
     };
